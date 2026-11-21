@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>光电网络仿真台 · ANTL</title><link rel="stylesheet" href="style.css"><script defer src="sim.js"></script>
+</head>
+<body>
+<header><div class="bar"><div class="brand"><span class="mark" aria-hidden="true">⌁</span> ANTL <span class="brand-sub">网络实验室</span></div><span class="offline"><i></i> 本地仿真</span></div></header>
+<main>
+<div class="heading"><div><h1>光电网络仿真台</h1><p>4 个服务器节点 · 4 台机架顶交换机 · 1 台 MEMS 光开关</p></div><button id="pause" class="plain">Ⅱ　暂停仿真</button></div>
+<div class="workspace">
+<section class="panel diagram"><div class="panelhead"><h2><span class="icon">⌘</span> 网络拓扑</h2><span id="map-name" class="tag"></span></div>
+<div class="graphwrap"><div class="graphscroll" tabindex="0" aria-label="拓扑图，可在窄屏横向滑动"><svg id="network" viewBox="0 0 740 360" role="img" aria-label="MEMS 光交换、ToR 与服务器连接图"></svg></div></div>
+<p class="mobile-hint">左右滑动查看完整拓扑 ↔</p>
+<div class="legend"><span><i class="line optical"></i>已接通光路</span><span><i class="line electric"></i>仿真电路径</span><span><i class="signal"></i>业务流向</span></div>
+<div class="readout"><div><small>当前业务</small><strong id="route-nodes"></strong></div><div><small>转发路径</small><strong id="route-kind"></strong></div><div><small>模拟交付速率</small><strong><span id="delivered"></span> <em>Gbit/s</em></strong></div></div>
+<div id="explain" class="explain" role="status"></div></section>
+<aside class="panel controls"><div class="panelhead"><h2><span class="icon">☷</span> 仿真控制台</h2></div><form id="controls">
+<fieldset><legend>光路拓扑</legend><div class="presets" id="presets"></div></fieldset>
+<fieldset class="traffic"><legend>业务流向</legend><div class="ends"><label>源节点<select id="src"></select></label><button type="button" id="reverse" title="反转业务方向" aria-label="反转业务方向">⇄</button><label>目的节点<select id="dst"></select></label></div>
+<label for="rate" class="ratelabel">发送速率 <output id="requested"></output></label><input id="rate" type="range" min="0" max="100" step="1" value="60"><div class="range-scale"><span>0</span><span>100 Gbit/s</span></div>
+<label class="fallback"><input id="fallback" type="checkbox" checked> 未配对时经电网络转发</label></fieldset>
+<button class="apply" id="apply" type="submit">应用配置 <span>↗</span></button><small id="draft-state" aria-live="polite"></small>
+</form></aside></div>
+<div class="lower"><section class="panel"><div class="panelhead"><h2><span class="icon">⇆</span> MEMS 端口映射</h2><span class="meta">当前配置</span></div><div id="mappings" class="mappings"></div></section>
+<section class="panel"><div class="panelhead"><h2><span class="icon">≡</span> 仿真事件</h2><span class="meta">最新在前</span></div><ol id="events"></ol></section></div>
+</main></body></html>
