@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent 多窗口协作与交接"
+  short_description: "多窗口分工与快速接管，复用环境和验证证据，合批处理小修，减少重复上下文"
+  default_prompt: "使用 $gpt-dsh-handoff 恢复项目任务板，按当前角色执行或规划可并行的工作批次，复用有效验证并输出有编号和目标的交接卡。"

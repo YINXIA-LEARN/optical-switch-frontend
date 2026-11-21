@@ -1,0 +1,21 @@
+I1 PASS {
+  url: 'http://127.0.0.1:61183/exhibit/relocated/network/',
+  bytes: 35647,
+  files: [
+    'assets/index-BwzbYOdk.js',
+    'assets/index-ipCfbS2o.css',
+    'index.html'
+  ]
+}
+I2 PASS {
+  actualForegroundMs: 21110,
+  observedMs: 21061,
+  ticks: [ 0, 21 ],
+  events: [ 'A → B', 'B → C' ]
+}
+I3 PASS {
+  viewport: { width: 390, height: 844 },
+  rows: 32,
+  crossGroup: [ '0-4', '1-5', '2-6', '3-7' ],
+  errors: []
+}

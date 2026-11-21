@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-11-21T09:23:16.427Z",
+  "cwd": "D:\\ANT实验室实践项目\\光交换\\纯前端",
+  "node": "v24.18.0",
+  "chrome": "157.0.8103.79",
+  "copiedDist": "C:\\Users\\13694\\AppData\\Local\\Temp\\optical-dashboard-JmJene\\exhibit\\relocated\\network",
+  "url": "http://127.0.0.1:61183/exhibit/relocated/network/",
+  "assets": [
+    {
+      "path": "assets/index-BwzbYOdk.js",
+      "bytes": 27500,
+      "sha256": "594e1cba20fc6ee3537acda1ee08a7a326a104a1369b0b7044bf63a91aa88da9"
+    },
+    {
+      "path": "assets/index-ipCfbS2o.css",
+      "bytes": 7704,
+      "sha256": "d15c24335b604f517db7f37603ade3808349991f0582dd82a5538621fa2041c3"
+    },
+    {
+      "path": "index.html",
+      "bytes": 443,
+      "sha256": "bb1b79ad7dbf66ec58a561142c8d7b2f5b2c1a5c416c699ceeae795ba05a81da"
+    }
+  ],
+  "bytes": 35647,
+  "requests": [
+    {
+      "url": "http://127.0.0.1:61183/exhibit/relocated/network/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:61183/exhibit/relocated/network/assets/index-ipCfbS2o.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:61183/exhibit/relocated/network/assets/index-BwzbYOdk.js",
+      "status": 200
+    }
+  ],
+  "outsideNetworkBlocked": true,
+  "blocked": [],
+  "errors": []
+}
