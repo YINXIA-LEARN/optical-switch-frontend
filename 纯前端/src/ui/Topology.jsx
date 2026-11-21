@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from 'preact/hooks';
+import ModuleHelp from './ModuleHelp.jsx';
 import { electricPoints, opticalPath, placeTopology, roundedPath, WIDTH } from './layout.mjs';
 
 const FLOW_SPEED = 122;
@@ -115,7 +116,9 @@ export default function Topology({ snapshot }) {
   return (
     <section class="panel topology" aria-labelledby="topology-heading" data-view="topology" data-tick={tick}>
       <div class="panel-heading">
-        <h2 id="topology-heading">网络拓扑</h2>
+        <div class="help-heading"><h2 id="topology-heading">网络拓扑</h2>
+          <ModuleHelp id="help-topology" label="网络拓扑">沿 E1～E3 查看固定电链路，沿 O 查看 MEMS 当前配对。箭头和移动光点表示有流量的方向；每 3 秒重新判定活跃状态。</ModuleHelp>
+        </div>
         <span class="panel-meta">{electricLinks.length} 条电链路 <span aria-hidden="true">·</span> {opticalPairs.length} 对光路</span>
       </div>
       <div class="diagram-scroll" tabIndex={0} role="region" aria-label="拓扑画布，可横向滚动">

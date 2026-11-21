@@ -1,0 +1,13 @@
+
+> hybrid-network-dashboard@1.0.0 build
+> vite build
+
+vite v7.3.8 building client environment for production...
+transforming...
+✓ 21 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                  0.44 kB │ gzip:  0.31 kB
+dist/assets/index-PLF021w8.css  15.91 kB │ gzip:  4.42 kB
+dist/assets/index-CbCbZ1KX.js   46.95 kB │ gzip: 18.25 kB
+✓ built in 192ms

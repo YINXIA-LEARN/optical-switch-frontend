@@ -1,0 +1,61 @@
+M1 A [ '0-1', '2-3' ]
+M1 B [ '0-2', '1-3' ]
+M1 C [ '0-3', '1-2' ]
+M2 {
+  idleGates: 16,
+  mixedDraws: 20,
+  rates: {
+    'electric-0-1': 1,
+    'electric-1-0': 40,
+    'electric-0-2': 0,
+    'electric-2-0': 0,
+    'electric-0-3': 0,
+    'electric-3-0': 0,
+    'electric-1-2': 0,
+    'electric-2-1': 0,
+    'electric-1-3': 61,
+    'electric-3-1': 0,
+    'electric-2-3': 0,
+    'electric-3-2': 0,
+    'optical-0-1': 100,
+    'optical-1-0': 0,
+    'optical-2-3': 0,
+    'optical-3-2': 0
+  }
+}
+M3 {
+  tick: 10,
+  from: 'A',
+  to: 'B',
+  outgoing: [ 'optical-0-1', 'optical-1-0', 'optical-2-3', 'optical-3-2' ],
+  incoming: [ 'optical-0-2', 'optical-1-3', 'optical-2-0', 'optical-3-1' ]
+}
+M3 {
+  tick: 20,
+  from: 'B',
+  to: 'C',
+  outgoing: [ 'optical-0-2', 'optical-1-3', 'optical-2-0', 'optical-3-1' ],
+  incoming: [ 'optical-0-3', 'optical-1-2', 'optical-2-1', 'optical-3-0' ]
+}
+M3 {
+  tick: 30,
+  from: 'C',
+  to: 'A',
+  outgoing: [ 'optical-0-3', 'optical-1-2', 'optical-2-1', 'optical-3-0' ],
+  incoming: [ 'optical-0-1', 'optical-1-0', 'optical-2-3', 'optical-3-2' ]
+}
+M4 { tick: 10, rows: 32, pairs: [ '0-4', '1-5', '2-6', '3-7' ] }
+M4 { tick: 20, rows: 32, pairs: [ '0-7', '1-6', '2-5', '3-4' ] }
+✔ M1 · default wiring, all strategies and validation (3.7109ms)
+✔ M2 · independent gates and rates, including zero and endpoints (0.7007ms)
+✔ activity holds for three ticks, rates resample each tick and new optical paths initialize on switch (0.3408ms)
+✔ M3 · switch on 10, 20 and 30, immutable history and constant electric directions (1.1073ms)
+✔ M4 · eight racks and cross-group optical switching (2.8685ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92.9048

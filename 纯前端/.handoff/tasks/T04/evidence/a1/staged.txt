@@ -1,0 +1,12 @@
+M	纯前端/README.md
+D	纯前端/dist/assets/index-BwzbYOdk.js
+A	纯前端/dist/assets/index-CKUFaIgq.js
+A	纯前端/dist/assets/index-SMeOn5Le.css
+D	纯前端/dist/assets/index-ipCfbS2o.css
+M	纯前端/dist/index.html
+M	纯前端/src/sim/index.mjs
+M	纯前端/src/ui/Topology.jsx
+M	纯前端/src/ui/dashboard.css
+M	纯前端/tests/integration/check.mjs
+A	纯前端/tests/integration/flow-motion.mjs
+M	纯前端/tests/sim/simulation.test.mjs

@@ -1,4 +1,6 @@
 import Topology from './Topology.jsx';
+import ModuleHelp from './ModuleHelp.jsx';
+import HistoryAnalytics from './HistoryAnalytics.jsx';
 import './dashboard.css';
 
 const clock = new Intl.DateTimeFormat('zh-CN', {
@@ -28,6 +30,7 @@ function Header({ tick, strategyId, timeMs }) {
         <div>
           <div class="title-line">
             <h1>光电网络总览</h1>
+            <ModuleHelp id="help-overview" label="光电网络总览">上方显示浏览器当前模拟的策略与采样时间。下方带“历史样例”的图表有独立的演示时钟。</ModuleHelp>
             <span class="simulation-tag"><i aria-hidden="true" />本地仿真</span>
           </div>
           <p>MEMS 每 10 秒切换光路</p>
@@ -54,7 +57,9 @@ function Rates({ tick, flows, names }) {
   return (
     <section class="panel rates" aria-labelledby="rates-heading" data-view="rates" data-tick={tick}>
       <div class="panel-heading">
-        <h2 id="rates-heading">实时流量</h2>
+        <div class="help-heading"><h2 id="rates-heading">实时流量</h2>
+          <ModuleHelp id="help-rates" label="实时流量">每行代表一个传输方向。同一对机架的光路和电路分开统计；每秒速率从高到低排列，空闲方向保留为 0。</ModuleHelp>
+        </div>
         <span class="panel-meta"><b>{active}</b> 活跃 <span aria-hidden="true">/</span> {ordered.length} 条路径</span>
       </div>
       <div class="table-scroll" role="region" aria-label="有向路径速率，可纵向滚动" tabIndex={0}>
@@ -86,7 +91,9 @@ function Events({ tick, events, names }) {
   return (
     <section class="panel events" aria-labelledby="events-heading" data-view="events" data-tick={tick}>
       <div class="panel-heading">
-        <h2 id="events-heading">策略事件</h2>
+        <div class="help-heading"><h2 id="events-heading">策略事件</h2>
+          <ModuleHelp id="help-events" label="策略事件">每 10 秒记录一次 MEMS 切换，最新事件在上。每条列出切换时间、前后策略和切换后接通的机架对。</ModuleHelp>
+        </div>
         <span class="panel-meta">已切换 {events.length} 次</span>
       </div>
       {events.length === 0
@@ -118,6 +125,7 @@ export default function Dashboard({ snapshot }) {
         <Rates tick={tick} flows={flows} names={names} />
         <Events tick={tick} events={events} names={names} />
       </div>
+      <HistoryAnalytics rackCount={tors.length} />
     </main>
   );
 }

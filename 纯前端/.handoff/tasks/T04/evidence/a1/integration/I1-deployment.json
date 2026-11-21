@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-11-21T10:46:01.254Z",
+  "cwd": "D:\\ANT实验室实践项目\\光交换\\纯前端",
+  "node": "v24.18.0",
+  "chrome": "157.0.8103.79",
+  "copiedDist": "C:\\Users\\13694\\AppData\\Local\\Temp\\optical-dashboard-smbmek\\exhibit\\relocated\\network",
+  "url": "http://127.0.0.1:58689/exhibit/relocated/network/",
+  "assets": [
+    {
+      "path": "assets/index-CKUFaIgq.js",
+      "bytes": 28240,
+      "sha256": "775d45f693d5599c6372ce7f33fdc901e437b1efbdc0766ac2eeae3ebde084a6"
+    },
+    {
+      "path": "assets/index-SMeOn5Le.css",
+      "bytes": 7742,
+      "sha256": "ddd6e0880ccc6cd56653e7832ac7d791046fb12c9ef4c81b183af950a856685f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 443,
+      "sha256": "cf6e538e28ae1ebfc4200c6674c8c1b1f929b860d71e76ae1fcaec835e8dc38d"
+    }
+  ],
+  "bytes": 36425,
+  "requests": [
+    {
+      "url": "http://127.0.0.1:58689/exhibit/relocated/network/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:58689/exhibit/relocated/network/assets/index-SMeOn5Le.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:58689/exhibit/relocated/network/assets/index-CKUFaIgq.js",
+      "status": 200
+    }
+  ],
+  "outsideNetworkBlocked": true,
+  "blocked": [],
+  "errors": []
+}

@@ -1,0 +1,48 @@
+A1 PASS {
+  longest: [ '0-3', 1391.9434814453125 ],
+  short: [ '0-1', 208 ],
+  longDot: {
+    id: 'electric-0-3',
+    length: 8.454330329700786,
+    seconds: 11.409372329711914
+  },
+  shortDot: {
+    id: 'optical-0-1',
+    length: 8.454330329700786,
+    seconds: 1.7049180269241333
+  },
+  shots: [
+    {
+      filename: 'flow-frame-1.png',
+      wallMs: 3335.199999999255,
+      svgSeconds: 3.2500340938568115,
+      tick: 3
+    },
+    {
+      filename: 'flow-frame-2.png',
+      wallMs: 3642.5,
+      svgSeconds: 3.5557339191436768,
+      tick: 3
+    },
+    {
+      filename: 'flow-frame-3.png',
+      wallMs: 3859.60000000149,
+      svgSeconds: 3.7724339962005615,
+      tick: 3
+    }
+  ]
+}
+A2 PASS {
+  rateBefore: 11,
+  rateAfter: 91,
+  movementAtUpdate: [
+    0.7206747491480883,
+    0.7206747491480883,
+    0.72070640628624,
+    0.7207064062861832
+  ],
+  activityTicks: [ 3, 6 ],
+  switchTick: 10,
+  retired: [ 'optical-0-1', 'optical-1-0', 'optical-2-3', 'optical-3-2' ],
+  installed: [ 'optical-0-2', 'optical-1-3', 'optical-2-0', 'optical-3-1' ]
+}

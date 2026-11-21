@@ -1,0 +1,1446 @@
+{
+  "desktopSize": {
+    "width": 1440,
+    "height": 900
+  },
+  "narrowSize": {
+    "width": 390,
+    "height": 844
+  },
+  "scroll": {
+    "viewport": 390,
+    "pageWidth": 375,
+    "pageClientWidth": 375,
+    "localDiagramScroll": 356,
+    "localTableScroll": 171.3333282470703,
+    "tableFits": true,
+    "lastRateVisible": true,
+    "stickyHeader": true
+  },
+  "narrowTick": 20,
+  "narrowEvents": [
+    {
+      "tick": 20,
+      "time": "2026-11-21T09:00:20.056Z",
+      "clockText": "17:00:20",
+      "transition": "B → C",
+      "pairs": [
+        "0-3",
+        "1-2"
+      ],
+      "pairText": [
+        "ToR0 ↔ ToR3",
+        "ToR1 ↔ ToR2"
+      ]
+    },
+    {
+      "tick": 10,
+      "time": "2026-11-21T09:00:10.056Z",
+      "clockText": "17:00:10",
+      "transition": "A → B",
+      "pairs": [
+        "0-2",
+        "1-3"
+      ],
+      "pairText": [
+        "ToR0 ↔ ToR2",
+        "ToR1 ↔ ToR3"
+      ]
+    }
+  ],
+  "expanded": [
+    {
+      "tick": 0,
+      "time": "2026-11-21T09:00:00.055Z",
+      "clockText": "17:00:00",
+      "strategy": "A",
+      "views": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "racks": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "ports": 32,
+      "electric": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "1-2",
+        "1-3",
+        "2-3",
+        "4-5",
+        "4-6",
+        "4-7",
+        "5-6",
+        "5-7",
+        "6-7"
+      ],
+      "drops": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "optical": [
+        "0-1",
+        "2-3",
+        "4-5",
+        "6-7"
+      ],
+      "plotted": [
+        {
+          "id": "electric-0-1",
+          "rate": 21,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-1-0",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-0-2",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-2-0",
+          "rate": 82,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-0-3",
+          "rate": 81,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-0",
+          "rate": 12,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-1-2",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-2-1",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-1-3",
+          "rate": 83,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-1",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-2-3",
+          "rate": 17,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-2",
+          "rate": 83,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-4-5",
+          "rate": 12,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-5-4",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-4-6",
+          "rate": 28,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-6-4",
+          "rate": 11,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-4-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-7-4",
+          "rate": 18,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-5-6",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-6-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-5-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-7-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-6-7",
+          "rate": 86,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-7-6",
+          "rate": 72,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-0-1",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-1-0",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-2-3",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-3-2",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-4-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-5-4",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-6-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-7-6",
+          "rate": 31,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        }
+      ],
+      "rows": [
+        {
+          "id": "electric-6-7",
+          "rate": 86,
+          "visibleRate": 86
+        },
+        {
+          "id": "electric-1-3",
+          "rate": 83,
+          "visibleRate": 83
+        },
+        {
+          "id": "electric-3-2",
+          "rate": 83,
+          "visibleRate": 83
+        },
+        {
+          "id": "electric-2-0",
+          "rate": 82,
+          "visibleRate": 82
+        },
+        {
+          "id": "electric-0-3",
+          "rate": 81,
+          "visibleRate": 81
+        },
+        {
+          "id": "electric-7-6",
+          "rate": 72,
+          "visibleRate": 72
+        },
+        {
+          "id": "optical-7-6",
+          "rate": 31,
+          "visibleRate": 31
+        },
+        {
+          "id": "electric-4-6",
+          "rate": 28,
+          "visibleRate": 28
+        },
+        {
+          "id": "electric-0-1",
+          "rate": 21,
+          "visibleRate": 21
+        },
+        {
+          "id": "electric-7-4",
+          "rate": 18,
+          "visibleRate": 18
+        },
+        {
+          "id": "electric-2-3",
+          "rate": 17,
+          "visibleRate": 17
+        },
+        {
+          "id": "electric-3-0",
+          "rate": 12,
+          "visibleRate": 12
+        },
+        {
+          "id": "electric-4-5",
+          "rate": 12,
+          "visibleRate": 12
+        },
+        {
+          "id": "electric-6-4",
+          "rate": 11,
+          "visibleRate": 11
+        },
+        {
+          "id": "electric-0-2",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-1-0",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-1-2",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-2-1",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-3-1",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-4-7",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-5-4",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-5-6",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-5-7",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-6-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-7-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-0-1",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-1-0",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-2-3",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-3-2",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-4-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-5-4",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-6-7",
+          "rate": 0,
+          "visibleRate": 0
+        }
+      ],
+      "events": [],
+      "visibility": "visible"
+    },
+    {
+      "tick": 10,
+      "time": "2026-11-21T09:00:10.055Z",
+      "clockText": "17:00:10",
+      "strategy": "B",
+      "views": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "racks": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "ports": 32,
+      "electric": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "1-2",
+        "1-3",
+        "2-3",
+        "4-5",
+        "4-6",
+        "4-7",
+        "5-6",
+        "5-7",
+        "6-7"
+      ],
+      "drops": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "optical": [
+        "0-4",
+        "1-5",
+        "2-6",
+        "3-7"
+      ],
+      "plotted": [
+        {
+          "id": "electric-0-1",
+          "rate": 35,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-1-0",
+          "rate": 11,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-0-2",
+          "rate": 85,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-2-0",
+          "rate": 4,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-0-3",
+          "rate": 5,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-0",
+          "rate": 67,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-1-2",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-2-1",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-1-3",
+          "rate": 9,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-1",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-2-3",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-3-2",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-4-5",
+          "rate": 53,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-5-4",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-4-6",
+          "rate": 21,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-6-4",
+          "rate": 66,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-4-7",
+          "rate": 31,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-7-4",
+          "rate": 38,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-5-6",
+          "rate": 38,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-6-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-5-7",
+          "rate": 3,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-7-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-6-7",
+          "rate": 21,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-7-6",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-0-4",
+          "rate": 63,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-4-0",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-1-5",
+          "rate": 17,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-5-1",
+          "rate": 97,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-2-6",
+          "rate": 22,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-6-2",
+          "rate": 40,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-3-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-7-3",
+          "rate": 93,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        }
+      ],
+      "rows": [
+        {
+          "id": "optical-5-1",
+          "rate": 97,
+          "visibleRate": 97
+        },
+        {
+          "id": "optical-7-3",
+          "rate": 93,
+          "visibleRate": 93
+        },
+        {
+          "id": "electric-0-2",
+          "rate": 85,
+          "visibleRate": 85
+        },
+        {
+          "id": "electric-3-0",
+          "rate": 67,
+          "visibleRate": 67
+        },
+        {
+          "id": "electric-6-4",
+          "rate": 66,
+          "visibleRate": 66
+        },
+        {
+          "id": "optical-0-4",
+          "rate": 63,
+          "visibleRate": 63
+        },
+        {
+          "id": "electric-4-5",
+          "rate": 53,
+          "visibleRate": 53
+        },
+        {
+          "id": "optical-6-2",
+          "rate": 40,
+          "visibleRate": 40
+        },
+        {
+          "id": "electric-5-6",
+          "rate": 38,
+          "visibleRate": 38
+        },
+        {
+          "id": "electric-7-4",
+          "rate": 38,
+          "visibleRate": 38
+        },
+        {
+          "id": "electric-0-1",
+          "rate": 35,
+          "visibleRate": 35
+        },
+        {
+          "id": "electric-4-7",
+          "rate": 31,
+          "visibleRate": 31
+        },
+        {
+          "id": "optical-2-6",
+          "rate": 22,
+          "visibleRate": 22
+        },
+        {
+          "id": "electric-4-6",
+          "rate": 21,
+          "visibleRate": 21
+        },
+        {
+          "id": "electric-6-7",
+          "rate": 21,
+          "visibleRate": 21
+        },
+        {
+          "id": "optical-1-5",
+          "rate": 17,
+          "visibleRate": 17
+        },
+        {
+          "id": "electric-1-0",
+          "rate": 11,
+          "visibleRate": 11
+        },
+        {
+          "id": "electric-1-3",
+          "rate": 9,
+          "visibleRate": 9
+        },
+        {
+          "id": "electric-0-3",
+          "rate": 5,
+          "visibleRate": 5
+        },
+        {
+          "id": "electric-2-0",
+          "rate": 4,
+          "visibleRate": 4
+        },
+        {
+          "id": "electric-5-7",
+          "rate": 3,
+          "visibleRate": 3
+        },
+        {
+          "id": "electric-1-2",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-2-1",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-2-3",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-3-1",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-3-2",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-5-4",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-6-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-7-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-7-6",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-3-7",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-4-0",
+          "rate": 0,
+          "visibleRate": 0
+        }
+      ],
+      "events": [
+        {
+          "tick": 10,
+          "time": "2026-11-21T09:00:10.055Z",
+          "clockText": "17:00:10",
+          "transition": "A → B",
+          "pairs": [
+            "0-4",
+            "1-5",
+            "2-6",
+            "3-7"
+          ],
+          "pairText": [
+            "ToR0 ↔ ToR4",
+            "ToR1 ↔ ToR5",
+            "ToR2 ↔ ToR6",
+            "ToR3 ↔ ToR7"
+          ]
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "tick": 20,
+      "time": "2026-11-21T09:00:20.055Z",
+      "clockText": "17:00:20",
+      "strategy": "C",
+      "views": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "racks": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "ports": 32,
+      "electric": [
+        "0-1",
+        "0-2",
+        "0-3",
+        "1-2",
+        "1-3",
+        "2-3",
+        "4-5",
+        "4-6",
+        "4-7",
+        "5-6",
+        "5-7",
+        "6-7"
+      ],
+      "drops": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "optical": [
+        "0-7",
+        "1-6",
+        "2-5",
+        "3-4"
+      ],
+      "plotted": [
+        {
+          "id": "electric-0-1",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-1-0",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-0-2",
+          "rate": 38,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-2-0",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-0-3",
+          "rate": 9,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-0",
+          "rate": 45,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-1-2",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-2-1",
+          "rate": 97,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-1-3",
+          "rate": 64,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-1",
+          "rate": 91,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-2-3",
+          "rate": 75,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-3-2",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-4-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-5-4",
+          "rate": 65,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-4-6",
+          "rate": 31,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-6-4",
+          "rate": 89,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-4-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-7-4",
+          "rate": 71,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-5-6",
+          "rate": 69,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-6-5",
+          "rate": 60,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "electric-5-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-7-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-6-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "electric-7-6",
+          "rate": 16,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-0-7",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-7-0",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-1-6",
+          "rate": 20,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-6-1",
+          "rate": 91,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-2-5",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        },
+        {
+          "id": "optical-5-2",
+          "rate": 25,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-3-4",
+          "rate": 57,
+          "active": true,
+          "arrow": true,
+          "movingDot": true
+        },
+        {
+          "id": "optical-4-3",
+          "rate": 0,
+          "active": false,
+          "arrow": false,
+          "movingDot": false
+        }
+      ],
+      "rows": [
+        {
+          "id": "electric-2-1",
+          "rate": 97,
+          "visibleRate": 97
+        },
+        {
+          "id": "electric-3-1",
+          "rate": 91,
+          "visibleRate": 91
+        },
+        {
+          "id": "optical-6-1",
+          "rate": 91,
+          "visibleRate": 91
+        },
+        {
+          "id": "electric-6-4",
+          "rate": 89,
+          "visibleRate": 89
+        },
+        {
+          "id": "electric-2-3",
+          "rate": 75,
+          "visibleRate": 75
+        },
+        {
+          "id": "electric-7-4",
+          "rate": 71,
+          "visibleRate": 71
+        },
+        {
+          "id": "electric-5-6",
+          "rate": 69,
+          "visibleRate": 69
+        },
+        {
+          "id": "electric-5-4",
+          "rate": 65,
+          "visibleRate": 65
+        },
+        {
+          "id": "electric-1-3",
+          "rate": 64,
+          "visibleRate": 64
+        },
+        {
+          "id": "electric-6-5",
+          "rate": 60,
+          "visibleRate": 60
+        },
+        {
+          "id": "optical-3-4",
+          "rate": 57,
+          "visibleRate": 57
+        },
+        {
+          "id": "electric-3-0",
+          "rate": 45,
+          "visibleRate": 45
+        },
+        {
+          "id": "electric-0-2",
+          "rate": 38,
+          "visibleRate": 38
+        },
+        {
+          "id": "electric-4-6",
+          "rate": 31,
+          "visibleRate": 31
+        },
+        {
+          "id": "optical-5-2",
+          "rate": 25,
+          "visibleRate": 25
+        },
+        {
+          "id": "optical-1-6",
+          "rate": 20,
+          "visibleRate": 20
+        },
+        {
+          "id": "electric-7-6",
+          "rate": 16,
+          "visibleRate": 16
+        },
+        {
+          "id": "electric-0-3",
+          "rate": 9,
+          "visibleRate": 9
+        },
+        {
+          "id": "electric-0-1",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-1-0",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-1-2",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-2-0",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-3-2",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-4-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-4-7",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-5-7",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-6-7",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "electric-7-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-0-7",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-2-5",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-4-3",
+          "rate": 0,
+          "visibleRate": 0
+        },
+        {
+          "id": "optical-7-0",
+          "rate": 0,
+          "visibleRate": 0
+        }
+      ],
+      "events": [
+        {
+          "tick": 20,
+          "time": "2026-11-21T09:00:20.055Z",
+          "clockText": "17:00:20",
+          "transition": "B → C",
+          "pairs": [
+            "0-7",
+            "1-6",
+            "2-5",
+            "3-4"
+          ],
+          "pairText": [
+            "ToR0 ↔ ToR7",
+            "ToR1 ↔ ToR6",
+            "ToR2 ↔ ToR5",
+            "ToR3 ↔ ToR4"
+          ]
+        },
+        {
+          "tick": 10,
+          "time": "2026-11-21T09:00:10.055Z",
+          "clockText": "17:00:10",
+          "transition": "A → B",
+          "pairs": [
+            "0-4",
+            "1-5",
+            "2-6",
+            "3-7"
+          ],
+          "pairText": [
+            "ToR0 ↔ ToR4",
+            "ToR1 ↔ ToR5",
+            "ToR2 ↔ ToR6",
+            "ToR3 ↔ ToR7"
+          ]
+        }
+      ],
+      "visibility": "visible"
+    }
+  ],
+  "routingB": {
+    "electricUnderCore": [],
+    "opticalOutsideCore": []
+  },
+  "routingC": {
+    "electricUnderCore": [],
+    "opticalOutsideCore": []
+  }
+}
