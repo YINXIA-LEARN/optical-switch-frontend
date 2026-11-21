@@ -1,4 +1,26 @@
+import { useLayoutEffect, useRef } from 'preact/hooks';
 import { electricPoints, opticalPath, placeTopology, roundedPath, WIDTH } from './layout.mjs';
+
+const FLOW_SPEED = 122;
+
+function FlowDot({ path }) {
+  const motion = useRef(null);
+  useLayoutEffect(() => {
+    const element = motion.current;
+    const geometry = document.createElementNS(element.namespaceURI, 'path');
+    geometry.setAttribute('d', path);
+    element.setAttribute('dur', `${geometry.getTotalLength() / FLOW_SPEED}s`);
+    element.beginElement();
+  }, [path]);
+
+  // The same perpendicular offset from two reversed routes puts their dots on opposite sides.
+  return (
+    <circle class="flow-dot" cy="4.7" r="3.7" aria-hidden="true">
+      <animateMotion ref={motion} path={path} begin="indefinite" repeatCount="indefinite"
+        calcMode="paced" rotate="auto" />
+    </circle>
+  );
+}
 
 function Arrow({ x, y, direction }) {
   const tip = x + 6 * direction;
@@ -11,43 +33,43 @@ function Direction({ path, anchor, direction, flow }) {
     <g data-flow={flow.id} data-rate={flow.rate} data-active={flow.rate > 0 ? 'true' : 'false'}>
       <title>{`ToR${flow.src} → ToR${flow.dst} · ${flow.rate} Gbit/s`}</title>
       {flow.rate > 0 && <>
-        <path class="flow-highlight" d={path} pathLength={100} />
+        <FlowDot path={path} />
         <Arrow x={anchor[0] + direction * 18} y={anchor[1]} direction={direction} />
       </>}
     </g>
   );
 }
 
-function ElectricalLink({ link, racks, rates, height }) {
+function electricalRoute(link, racks, height) {
   const points = electricPoints(link, racks, height);
   const reverse = [...points].reverse();
-  const path = roundedPath(points);
-  const direction = Math.sign(points[1][0] - points[0][0]);
-  const reverseDirection = Math.sign(reverse[1][0] - reverse[0][0]);
-  const { a, b } = link;
-  return (
-    <g class="electric-link" data-electric-edge={`${a}-${b}`}>
-      <path class="crossing-gap" d={path} />
-      <path class="electric-base" d={path} />
-      <Direction path={path} anchor={points[0]} direction={direction} flow={rates.get(`electric-${a}-${b}`)} />
-      <Direction path={roundedPath(reverse)} anchor={reverse[0]} direction={reverseDirection} flow={rates.get(`electric-${b}-${a}`)} />
-    </g>
-  );
+  return [points, reverse].map(route => ({
+    path: roundedPath(route),
+    anchor: route[0],
+    direction: Math.sign(route[1][0] - route[0][0]),
+  }));
 }
 
-function OpticalPair({ pair, racks, rates, lane }) {
+function opticalRoute(pair, racks, lane) {
   const { a, b } = pair;
   const source = racks.get(a);
   const target = racks.get(b);
-  const path = opticalPath(source, target, lane);
-  return (
-    <g class="optical-pair" data-optical-pair={`${a}-${b}`}>
-      <path class="crossing-gap" d={path} />
-      <path class="optical-base" d={path} />
-      <Direction path={path} anchor={source.core} direction={source.west ? 1 : -1} flow={rates.get(`optical-${a}-${b}`)} />
-      <Direction path={opticalPath(target, source, lane)} anchor={target.core} direction={target.west ? 1 : -1} flow={rates.get(`optical-${b}-${a}`)} />
-    </g>
-  );
+  return [[source, target], [target, source]].map(([from, to]) => ({
+    path: opticalPath(from, to, lane),
+    anchor: from.core,
+    direction: from.west ? 1 : -1,
+  }));
+}
+
+function Directions({ routes, medium, rates }) {
+  return routes.flatMap(({ a, b, geometry }) => {
+    const forward = `${medium}-${a}-${b}`;
+    const reverse = `${medium}-${b}-${a}`;
+    return [
+      <Direction key={forward} {...geometry[0]} flow={rates.get(forward)} />,
+      <Direction key={reverse} {...geometry[1]} flow={rates.get(reverse)} />,
+    ];
+  });
 }
 
 function Rack({ tor, rack }) {
@@ -88,6 +110,8 @@ export default function Topology({ snapshot }) {
   const { tors, electricLinks, opticalPairs, flows, tick } = snapshot;
   const { height, racks, core } = placeTopology(tors, electricLinks);
   const rates = new Map(flows.map(flow => [flow.id, flow]));
+  const electricRoutes = electricLinks.map(link => ({ ...link, geometry: electricalRoute(link, racks, height) }));
+  const opticalRoutes = opticalPairs.map((pair, lane) => ({ ...pair, geometry: opticalRoute(pair, racks, lane) }));
   return (
     <section class="panel topology" aria-labelledby="topology-heading" data-view="topology" data-tick={tick}>
       <div class="panel-heading">
@@ -97,8 +121,14 @@ export default function Topology({ snapshot }) {
       <div class="diagram-scroll" tabIndex={0} role="region" aria-label="拓扑画布，可横向滚动">
         <svg viewBox={`0 0 ${WIDTH} ${height}`} role="img" aria-labelledby="diagram-title diagram-desc">
           <title id="diagram-title">ToR 与 MEMS 光电网络连接图</title>
-          <desc id="diagram-desc">灰蓝实线为电链路，蓝色虚线为光路。高亮线段上的箭头标出该方向的流量。</desc>
-          {electricLinks.map(link => <ElectricalLink key={`${link.a}-${link.b}`} link={link} racks={racks} rates={rates} height={height} />)}
+          <desc id="diagram-desc">灰蓝实线为电链路，蓝色虚线为光路。活跃方向用源端箭头和移动光点标记。</desc>
+          {electricRoutes.map(({ a, b, geometry: [{ path }] }) => (
+            <g key={`${a}-${b}`} data-electric-edge={`${a}-${b}`}>
+              <path class="crossing-gap" d={path} />
+              <path class="electric-base" d={path} />
+            </g>
+          ))}
+          <Directions routes={electricRoutes} medium="electric" rates={rates} />
           {tors.map(({ id }) => {
             const { optical: [aX, aY], core: [bX, bY] } = racks.get(id);
             return <path key={id} data-optical-drop={id} class="optical-base optical-drop"
@@ -106,7 +136,13 @@ export default function Topology({ snapshot }) {
           })}
           <rect class="core-body" {...core} rx="15" />
           <g class="core-routing" data-mems="">
-            {opticalPairs.map((pair, lane) => <OpticalPair key={`${pair.a}-${pair.b}`} pair={pair} racks={racks} rates={rates} lane={lane} />)}
+            {opticalRoutes.map(({ a, b, geometry: [{ path }] }) => (
+              <g key={`${a}-${b}`} class="optical-pair" data-optical-pair={`${a}-${b}`}>
+                <path class="crossing-gap" d={path} />
+                <path class="optical-base" d={path} />
+              </g>
+            ))}
+            <Directions routes={opticalRoutes} medium="optical" rates={rates} />
           </g>
           <text class="core-title" x="430" y={core.y + 26} text-anchor="middle">MEMS</text>
           {tors.map(({ id }, index) => {

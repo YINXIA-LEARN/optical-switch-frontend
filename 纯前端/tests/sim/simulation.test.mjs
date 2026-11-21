@@ -74,6 +74,29 @@ test('M2 · independent gates and rates, including zero and endpoints', () => {
   console.log('M2', { idleGates: gates, mixedDraws: consumed, rates });
 });
 
+test('activity holds for three ticks, rates resample each tick and new optical paths initialize on switch', () => {
+  let draw = 0.9;
+  const simulation = createSimulation({ random: () => draw });
+  const step = (value, electricRate, opticalRate = electricRate) => {
+    draw = value;
+    const { tick, flows } = simulation.step();
+    for (const flow of flows) {
+      assert.equal(flow.rate, flow.medium === 'electric' ? electricRate : opticalRate, `tick ${tick}: ${flow.id}`);
+    }
+  };
+
+  assert.ok(simulation.current().flows.every(flow => flow.rate === 0));
+  step(0.1, 0);
+  step(0.1, 0);
+  step(0.1, 11);
+  step(0.99, 100);
+  step(0.8, 81);
+  for (let tick = 6; tick <= 9; tick++) step(0.9, 0);
+  step(0.1, 0, 11); // tick 10: only the newly connected optical directions draw activity.
+  step(0.99, 0, 100);
+  step(0.9, 0); // tick 12: all directions draw activity again.
+});
+
 test('M3 · switch on 10, 20 and 30, immutable history and constant electric directions', () => {
   const startMs = Date.parse('2026-11-21T08:00:00+08:00');
   const simulation = createSimulation({ startMs, random: () => 0.1 });

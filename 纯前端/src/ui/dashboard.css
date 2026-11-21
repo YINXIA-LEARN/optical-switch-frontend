@@ -134,16 +134,19 @@ body { margin: 0; }
 .diagram-scroll:focus-visible, .table-scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 .diagram-scroll svg path { stroke-linecap: round; stroke-linejoin: round; }
-.electric-base, .optical-base, .crossing-gap, .flow-highlight { fill: none; }
+.electric-base, .optical-base, .crossing-gap { fill: none; }
 .electric-base { stroke: #829ab8; stroke-width: 1.7; }
 .optical-base { stroke: #799de1; stroke-width: 1.75; stroke-dasharray: 4 4; }
 .optical-drop { stroke: #6084ce; }
 .crossing-gap { stroke: #fff; stroke-width: 8; }
 .core-routing .crossing-gap { stroke: #eff5ff; }
-.flow-highlight { stroke: #185bc5; stroke-width: 2.8; stroke-dasharray: 46 100; }
 .flow-arrow { fill: #185bc5; stroke: white; stroke-width: .65; }
-.optical-pair .flow-highlight { stroke: #4961d1; }
-.optical-pair .flow-arrow { fill: #4358c6; stroke: #eff5ff; }
+.core-routing .flow-arrow { fill: #4358c6; stroke: #eff5ff; }
+.flow-dot { fill: #1475d3; stroke: white; stroke-width: .75; pointer-events: none; }
+.core-routing .flow-dot { fill: #4e58c7; }
+@media (prefers-reduced-motion: reduce) {
+  .flow-dot { display: none; }
+}
 .rack-body { fill: #fff; stroke: #adc4e1; stroke-width: 1.4; }
 .rack-symbol { fill: #f2f7ff; stroke: #3564ad; stroke-width: 1.5; }
 .rack-title { fill: #163252; font-size: 17px; font-weight: 700; }

@@ -2,6 +2,7 @@ import { defaultConfig } from './config.mjs';
 
 const PORTS = ['O', 'E1', 'E2', 'E3'];
 const STRATEGY_SECONDS = 10;
+const ACTIVITY_SECONDS = 3;
 const ACTIVE_PROBABILITY = 0.5;
 const MAX_RATE = 100;
 
@@ -66,12 +67,17 @@ export function createSimulation({ config = defaultConfig, random = Math.random,
   let strategyIndex = 0;
   let events = Object.freeze([]);
 
-  function sample() {
+  function sample(previousFlows = []) {
     const { id: strategyId, opticalPairs, paths } = strategies[strategyIndex];
-    const flows = freezeRecords(paths.map(path => ({
-      ...path,
-      rate: random() < ACTIVE_PROBABILITY ? Math.floor(random() * MAX_RATE) + 1 : 0,
-    })));
+    const heldActivity = new Map();
+    if (tick % ACTIVITY_SECONDS !== 0) {
+      for (const flow of previousFlows) heldActivity.set(flow.id, flow.rate > 0);
+    }
+    const flows = freezeRecords(paths.map(path => {
+      // A newly connected optical direction samples immediately, even between activity ticks.
+      const active = heldActivity.get(path.id) ?? (random() < ACTIVE_PROBABILITY);
+      return { ...path, rate: active ? Math.floor(random() * MAX_RATE) + 1 : 0 };
+    }));
     return Object.freeze({ tick, timeMs: startMs + tick * 1000, strategyId, tors, electricLinks, opticalPairs, flows, events });
   }
 
@@ -87,7 +93,7 @@ export function createSimulation({ config = defaultConfig, random = Math.random,
         const event = Object.freeze({ tick, timeMs: startMs + tick * 1000, from, to, pairs: freezeRecords(opticalPairs) });
         events = Object.freeze([event, ...events]);
       }
-      snapshot = sample();
+      snapshot = sample(snapshot.flows);
       return snapshot;
     },
   };

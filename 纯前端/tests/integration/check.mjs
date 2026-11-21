@@ -6,7 +6,7 @@ import { basename, dirname, join, resolve } from 'node:path';
 import { chromium } from 'playwright';
 import { startStaticServer } from './static-server.mjs';
 
-const evidence = '.handoff/tasks/T03/evidence/a1';
+const evidence = process.env.OPTICAL_INTEGRATION_EVIDENCE ?? '.handoff/tasks/T03/evidence/a1';
 const desktopSize = { width: 1440, height: 900 };
 const narrowSize = { width: 390, height: 844 };
 const nestedPath = '/exhibit/relocated/network/';
@@ -50,7 +50,7 @@ function installObserver() {
         rate: Number(element.dataset.rate),
         active: element.dataset.active === 'true',
         arrow: !!element.querySelector('.flow-arrow'),
-        highlight: !!element.querySelector('.flow-highlight'),
+        movingDot: !!element.querySelector('.flow-dot'),
       })),
       rows: all('[data-path]').map(element => ({
         id: element.dataset.path, rate: Number(element.dataset.rate),
@@ -96,7 +96,7 @@ function validateFrame(frame, expectedElectric, optical, rackCount) {
   for (const { id, rate, visibleRate } of frame.rows) {
     assert.ok(Number.isInteger(rate) && rate >= 0 && rate <= 100);
     assert.equal(visibleRate, rate);
-    assert.deepEqual(plotted.get(id), { id, rate, active: rate > 0, arrow: rate > 0, highlight: rate > 0 });
+    assert.deepEqual(plotted.get(id), { id, rate, active: rate > 0, arrow: rate > 0, movingDot: rate > 0 });
   }
 }
 
